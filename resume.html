@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Roboto+Mono:wght@100;400&display=swap');
+
+    body {
+        background-image: linear-gradient(to right bottom, #fe9d6c, #ff8b72, #fd7c76, #ff6682, #fd5a89, #fb4e8d, #da4990, #bc4392, #a23e96, rgba(143, 58, 151, 255));
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+    }
+
+    h1 {
+        font-family: 'Lato', sans-serif;
+        font-size: 4em;
+        animation: blinker 1.2s linear infinite;
+    }
+
+    a {
+        font-size: 3em;
+        text-decoration: none;
+        color: rgb(9, 9, 218);
+        transition: all .5s;
+    }
+
+    a:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @media screen and (max-width:440px) {
+        body marquee h1 {
+            font-size: 2.5em;
+        }
+
+        body a {
+            font-size: 1.5em;
+        }
+    }
+</style>
+
+<body>
+    <marquee behaviour="scroll" scrollamount="15" width="70%" direction="left">
+        <h1>Resume will be updated soon.</h1>
+    </marquee>
+    <a href="index.html">Back to our site. <span>&rarr;</span></a>
+</body>
+
+</html>

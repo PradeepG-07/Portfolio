@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="MediaQueries.css">
+    <link rel="stylesheet" href="firstsection.css">
+    <link rel="stylesheet" href="secondSection.css">
+    <link rel="stylesheet" href="thirdSection.css">
+    <link rel="stylesheet" href="fourthSection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <title>Pradeep-Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Roboto+Mono:wght@100;400&display=swap');
+
+        :root {
+            --text-color: black;
+            --background-color: rgba(229, 229, 229, 0.8);
+            --highlight-color: #DE6135;
+            --nav-color: var(--background-color);
+            --hider-color: white;
+            --heading-color: purple;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            width: 20px;
+            background-color: var(--highlight-color);
+            background: linear-gradient(180deg, transparent, transparent, var(--highlight-color), var(--highlight-color), var(--highlight-color), var(--highlight-color));
+            border-radius: 20px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 20px;
+
+        }
+
+        #scrollTop {
+            cursor: pointer;
+            display: none;
+            position: fixed;
+            z-index: 3;
+            padding-top: 5px;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            background-color: var(--text-color);
+        }
+
+        #scrollTop img {
+            height: 35px;
+            width: 30px;
+            margin: auto;
+        }
+
+        section {
+            position: relative;
+            z-index: inherit;
+        }
+
+        section h2 {
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 3.12em;
+            color: var(--heading-color);
+            filter: drop-shadow(2px 1px 2px var(--heading-color));
+            text-decoration: underline;
+            text-transform: uppercase;
+            text-decoration-style: wavy;
+            text-underline-offset: 8px;
+        }
+
+        .second,
+        .third,
+        .fourth,
+        .fifth {
+            border-top: 1px solid brown;
+            width: 90%;
+            margin: auto;
+            padding: 1em;
+            padding-top: 15vh;
+            color: var(--text-color);
+        }
+
+        .third {
+            height: 98vh;
+        }
+
+        .btn {
+            width: 140px;
+            height: 44px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            outline: none;
+            border: 2px solid var(--text-color);
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform .5s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--highlight-color);
+            box-shadow: 0 0 10px var(--highlight-color);
+            color: var(--background-color);
+            transform: scale(1.05);
+        }
+
+        @keyframes incoming {
+            from {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                filter: blur(0px);
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="Images/up_arrow.png" alt="">
+    </button>
+    <header>
+        <div class="hider"></div>
+        <nav>
+            <span class="name"> <a href="#">Pradeep</a><span
+                    style="color:var(--highlight-color);text-align: center; font-size: 1.5em;">.</span> </span>
+            <ul class="navbar">
+                <li class="navitems"> <a href="#home1" onclick="window.scrollTo(0,0)">Home.</a></li>
+                <li class="navitems"> <a href="#about">About.</a></li>
+                <li class="navitems"> <a href="#skills">Skills.</a></li>
+                <li class="navitems"> <a href="#contact">Contact.</a></li>
+            </ul>
+            <div class="toggle-theme">
+                <input type="checkbox" id="toggle" style="visibility: hidden;" onchange="toggletheme()">
+                <label for="toggle">
+                    <img src="Images/sunny.png" alt="" class="sun">
+                    <img src="Images/moon.png" alt="" class="moon">
+                </label>
+            </div>
+
+        </nav>
+    </header>
+    <section class="first" id="home">
+        <aside class="left">
+            <a href="https://instagram.com/al_ways_si_lence?igshid=MzRlODBiNWFlZA==" target="_blank"><i
+                    class="fa fa-instagram icons"></i></a><span class="tooltip">Instagram</span>
+            <a href="#"><i class="fa fa-facebook icons" target="_blank"></i></a><span class="tooltip">Facebook</span>
+            <a href="https://twitter.com/Pradeep29217519" target="_blank"><i class="fa fa-twitter icons"></i></a><span
+                class="tooltip">Twitter</span>
+            <a href="https://www.linkedin.com/in/pradeep-golla-835a6522b/" target="_blank"><i
+                    class="fa fa-linkedin icons"></i></a><span class="tooltip">Linkedin</span>
+        </aside>
+        <div class="content">
+            <div class="intro">
+                <div style="display: flex; flex-direction: column;">
+                    <span>Hi,</span>
+                    <span style="color: var(--highlight-color);">I am Pradeep</span>
+                    <span style="display: flex;">I am a&nbsp;
+                        <div id="typescript"> web-developer.
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <figure>
+                <!-- <img src="Images/splash.png" alt="no img" class="img1"> -->
+                <img src="Images/Me.png" alt="no img" class="img1">
+            </figure>
+        </div>
+        <aside class="right">
+            <div style="transform: rotate(90deg); font-weight: bold;">
+                <p style="color: var(--text-color);">Scroll</p>
+            </div>
+            <div>
+                <hr
+                    style=" margin-bottom: 10px; height: 45px; width: 1px; background-color: var(--heading-color); border: none;">
+            </div>
+        </aside>
+    </section>
+    <section class="second" id="about">
+        <h2>About</h2>
+        <div class="content">
+            <div class="img">
+                <img src="Images/me2.jpeg" alt="">
+            </div>
+            <div class="aboutme">
+                <p>I'm Pradeep, hailing from Yemmiganur in Kurnool district. I'm presently pursuing my third year of
+                    Computer Science Engineering at Sree Vidyanikethan Engineering College. My passion lies in the realm
+                    of website development.</p>
+                <p>Want to know more about me?</p>
+                <button class="btn" onclick="goToResume()">Download Resume</button>
+            </div>
+        </div>
+    </section>
+    <section class="third" id="skills">
+        <h2>skills</h2>
+        <div class="skillcard">
+            <div class="card">
+                <img src="Images/htmllogo.png" alt="HTML">
+
+            </div>
+            <div class="card">
+                <img src="Images/csslogo.png" alt="HTML">
+
+            </div>
+            <div class="card">
+                <img src="Images/jslogo.png" alt="HTML">
+
+            </div>
+            <div class="card">
+                <img src="Images/nodejslogo.png" alt="HTML">
+
+            </div>
+            <div class="card">
+                <img src="Images/mongodblogo.png" alt="HTML">
+
+            </div>
+            <!-- <img src="Images/htmllogo.png" alt="HTML"> -->
+        </div>
+    </section>
+    <!-- <section class="fourth" id="portfolio">portfolio</section> -->
+    <section class="fourth" id="contact">
+        <h2>Contact</h2>
+        <div class="contactSection">
+            <div class="contactDetails">
+                <div class="contactItem">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+                    <div class="info">
+                        <h4>Address</h4>
+                        <p>5/2385,Lakshmipeta</p>
+                        <p>Yemmiganur-518360,Kurnool(DISTRICT)</p>
+                        <p>India</p>
+                    </div>
+                </div>
+                <div class="contactItem">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+                    <div class="info">
+                        <h4>Email</h4>
+                        <p> <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLCKmRnxjmPCjlzLtmqHZDWKfhWthBWscFzChBjnQmXwKzcxJcxrJBQbXfQBWhjLGdbQKp"
+                                target="_blank">pradeepindia500@gmail.com</a> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSfWIJcdYNOzQC5HxbWqPsrB8pl4xNPM-LMCZSrDeYMeMvQbIQ/formResponse"
+                    method="post" autocomplete="off">
+                    <div>
+                        <label for="fullname">Name</label>
+                        <input type="text" name="entry.2005620554" id="fullname" required>
+
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="entry.1045781291" id="email" required autocomplete="off">
+
+                    </div>
+                    <div>
+
+                        <label for="message">Message</label>
+                        <textarea name="entry.839337160" id="message" cols="50" rows="6" style="resize: none;"
+                            required></textarea>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <button class="btn" type="submit">Submit</button>
+                        <button class="btn" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

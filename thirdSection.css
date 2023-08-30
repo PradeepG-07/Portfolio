@@ -1,0 +1,23 @@
+.skillcard{
+    height: 90%;
+    display: flex;
+    column-gap: 2em;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.skillcard .card{
+    /* width: 20%; */
+    height: 40%;
+}
+.skillcard .card img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.skillcard .card:nth-child(odd) img{
+   height: 92%;
+   width: 92%;
+   position: relative;
+   top: 8px;
+}
