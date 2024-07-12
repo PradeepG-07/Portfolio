@@ -482,7 +482,7 @@ section h1 {
 }
 
 .show {
-    display: flex;
+    display: flex !important;
 }
 
 .hide {
@@ -510,4 +510,285 @@ section h1 {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.parallax1>use {
+    animation: move-forever1 10s linear infinite;
+
+    &:nth-child(1) {
+        animation-delay: -2s;
+    }
+}
+
+.parallax2>use {
+    animation: move-forever2 8s linear infinite;
+
+    &:nth-child(1) {
+        animation-delay: -2s;
+    }
+}
+
+.parallax3>use {
+    animation: move-forever3 6s linear infinite;
+
+    &:nth-child(1) {
+        animation-delay: -2s;
+    }
+}
+
+.parallax4>use {
+    animation: move-forever4 4s linear infinite;
+
+    &:nth-child(1) {
+        animation-delay: -2s;
+    }
+}
+
+@keyframes move-forever1 {
+    0% {
+        transform: translate(85px, 0%);
+    }
+
+    100% {
+        transform: translate(-90px, 0%);
+    }
+}
+
+@keyframes move-forever2 {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+
+    100% {
+        transform: translate(85px, 0%);
+    }
+}
+
+@keyframes move-forever3 {
+    0% {
+        transform: translate(85px, 0%);
+    }
+
+    100% {
+        transform: translate(-90px, 0%);
+    }
+}
+
+@keyframes move-forever4 {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+
+    100% {
+        transform: translate(85px, 0%);
+    }
+}
+
+
+/* Media Queries */
+@media screen and (width<=1200px) {
+    #about-me {
+        padding-top: 180px;
+    }
+
+    #about_me h1 .name {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (width<=1000px) {
+    header {
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbrand {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navitems {
+        display: none;
+        flex-direction: column;
+        height: calc(100vh - 60px);
+        justify-content: center;
+    }
+
+    #toggle_nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 30px;
+        height: 30px;
+    }
+
+    #toggle_nav img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .separator,
+    .contact_info {
+        display: none;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0;
+    }
+
+    .editorial {
+        height: 40px;
+        max-height: 40px;
+        margin: 45px 0;
+    }
+
+    #about-me {
+        padding-top: 80px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #about-me h1 {
+        font-size: 7vw;
+    }
+
+    #about-me h1 img {
+        width: 7vw;
+    }
+
+    #about-me p {
+        font-size: 3vw;
+        text-align: left;
+    }
+
+    .resume_btn {
+        font-size: 3vw;
+        width: fit-content;
+        white-space: nowrap;
+    }
+
+    .profile_image {
+        width: 40%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .content_container p {
+        text-align: justify;
+    }
+
+    .skill_categories button {
+        padding: 15px;
+    }
+
+    .all_skills {
+        width: fit-content;
+    }
+
+    .skill {
+        width: 120px;
+        height: 120px;
+    }
+
+    .projects-container {
+        width: calc(100vw - 40px);
+
+    }
+
+    .project-card {
+        width: calc(50% - 10px);
+    }
+
+    .project-card:nth-child(n+3) {
+        display: none;
+    }
+
+    section h1 {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (width<=800px) {
+    .profile_image {
+        width: 65%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .all_skills {
+        width: fit-content;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .expanded-project-image {
+        width: 100%;
+    }
+}
+
+@media screen and (width<=426px) {
+    .profile_image {
+        width: 100%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .resume_btn {
+        font-size: 6vw;
+    }
+
+    section h1 {
+        font-size: 11vw;
+    }
+
+    #about-me h1 {
+        font-size: 12vw;
+
+    }
+
+    #about-me h1 img {
+        width: 12vw;
+    }
+
+    #about-me p {
+        font-size: 6vw;
+    }
+
+    .all_skills {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .project-card:nth-child(3) {
+        display: block;
+    }
+
+    .project-content {
+        font-size: 4vw;
+    }
+
+    .project-content li {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (width<400px) {
+    .skill_categories {
+        flex-direction: column;
+        gap: 0;
+        background-color: transparent;
+    }
+
 }
