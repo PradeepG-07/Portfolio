@@ -72,3 +72,72 @@ skill_categories.addEventListener('click', e => {
 })
 const frontend = document.getElementById('frontend').click();
 
+
+//Update the projects section to show more projects / less projects
+const showMoreBtn=document.querySelector("#show-more");
+let initalShownProjectsCount=0;
+let currentShownProjectsCount=0;
+
+const projectCards=Array.from(document.querySelectorAll(".project-card"));
+projectCards.map(project=>{
+  if(getComputedStyle(project).getPropertyValue("display")!="none"){
+    initalShownProjectsCount+=1;
+  }
+});
+currentShownProjectsCount=initalShownProjectsCount;
+if(currentShownProjectsCount==projectCards.length){
+  showMoreBtn.style.display="none";
+}
+showMoreBtn.addEventListener('click',()=>{
+  if(currentShownProjectsCount<projectCards.length){
+    projectCards.map(project=>{
+      project.style.display="block";
+    });
+    currentShownProjectsCount=projectCards.length;
+    showMoreBtn.innerText="Show Less";
+  }
+  else{
+    for (let index = initalShownProjectsCount; index < projectCards.length; index++) {
+      const project = projectCards[index];
+      project.style.display="none";
+    }
+    currentShownProjectsCount=initalShownProjectsCount;
+    showMoreBtn.innerText="Show More"
+  }
+});
+
+// Toggle popup to display / hide the details of a project
+function showPopup(bool) {
+  if (bool) {
+    document.getElementById('popup').style.visibility = 'visible'
+  } else {
+    document.getElementById('popup').style.visibility = 'hidden'
+  }
+}
+
+// Clear popup consisting of previously expanded project
+function clearExpandedProject(){
+  expandedProjectHead.lastChild.remove();
+  expandedProjectImage.innerHTML="";
+  expandedProjectContent.innerHTML="";
+  showPopup(false);
+}
+
+// Expand project View
+const expandedProjectHead=document.querySelector(".expanded-project-head");
+const expandedProjectImage=document.querySelector(".expanded-project-image");
+const expandedProjectContent=document.querySelector(".expanded-project-content");
+function expandProject(projectNumber){
+  const ProjectImage=document.querySelectorAll(".project-head img")[projectNumber-1];
+  const ProjectTitle=document.querySelectorAll(".project-title")[projectNumber-1];
+  const ProjectContent=document.querySelectorAll(".project-content")[projectNumber-1].children;
+
+  expandedProjectHead.appendChild(ProjectTitle.cloneNode(true));
+  expandedProjectImage.appendChild(ProjectImage.cloneNode(true));
+  Array.from(ProjectContent).map(points=>{
+    expandedProjectContent.appendChild(points.cloneNode(true));
+  })
+
+  showPopup(true);
+  
+}
