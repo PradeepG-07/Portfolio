@@ -1,0 +1,8 @@
+FROM node:alpine
+WORKDIR /usr/src/app
+COPY package* ./
+COPY tsconfig.json ./
+RUN npm install
+COPY . ./
+RUN npm run build
+CMD ["npm","start"]
