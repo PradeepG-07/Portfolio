@@ -1,0 +1,19 @@
+# robots.txt file for https://pradeepg.tech
+
+# Allow all search engines to crawl everything except specified directories
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /config/
+
+# Allow search engines to crawl JavaScript, CSS, images, and assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /skills/
+
+# Specify the location of the sitemap
+Sitemap: https://pradeepg.tech/sitemap.xml
