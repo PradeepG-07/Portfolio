@@ -3,6 +3,7 @@ import "dotenv/config";
 import { z } from "zod";
 import sendEmail from "../utils/email";
 import setCorsHeaders from "../utils/setCorsHeaders";
+import { extractZodErrorMessages } from "../utils/helpers";
 
 const app = express();
 
@@ -31,7 +32,10 @@ app.get("/", (req: Request, res: Response) => {
 app.post("/contact", async (req: Request, res: Response) => {
 	const { data, error } = contactSchema.safeParse(req.body);
 	if (error) {
-		res.status(400).json({ success: false, message: "Params missing." });
+		res.status(400).json({
+			success: false,
+			message: extractZodErrorMessages(error),
+		});
 		return;
 	}
 	await sendEmail(data);
